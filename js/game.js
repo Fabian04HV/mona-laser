@@ -1,6 +1,6 @@
 let gameOver = false
 let scoreText = document.querySelector(".score")
-let textFeedback = document.getElementById("text")
+let textFeedback = document.getElementById("textFeedback")
 class Game{
   constructor(){
     this.playerImage
@@ -10,11 +10,13 @@ class Game{
     this.bullets = []
     this.tomatoes = []
     this.score = 0
+    this.bgMusic
   }
   preload(){
     this.playerImage = loadImage("../images/mona-lisa.png")
     this.tomatoImage = loadImage("../images/tomato.png")
     this.backgroundImage = loadImage("../images/louvre-hall.png")
+    this.bgMusic = loadSound("../fur-elise.mp3")
   }
   draw(){
     if(gameOver){

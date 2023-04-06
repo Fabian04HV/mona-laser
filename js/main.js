@@ -7,6 +7,7 @@ function preload(){
 function setup(){
   createCanvas(600, 600)
   game.spawnTomatoes()
+  game.bgMusic.play()
 }
 function draw(){
   lastShot++
