@@ -13,10 +13,10 @@ class Game{
     this.bgMusic
   }
   preload(){
-    this.playerImage = loadImage("../images/mona-lisa.png")
-    this.tomatoImage = loadImage("../images/tomato.png")
-    this.backgroundImage = loadImage("../images/louvre-hall.png")
-    this.bgMusic = loadSound("../fur-elise.mp3")
+    this.playerImage = loadImage("images/mona-lisa.png")
+    this.tomatoImage = loadImage("images/tomato.png")
+    this.backgroundImage = loadImage("images/louvre-hall.png")
+    this.bgMusic = loadSound("fur-elise.mp3")
   }
   draw(){
     if(gameOver){
