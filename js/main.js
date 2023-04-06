@@ -19,3 +19,9 @@ function keyPressed(){
     game.bullets.push(bullet)
   }
 }
+window.addEventListener("keydown", (e) =>{
+  console.log()
+  if(e.keyCode === 32){
+    e.preventDefault()
+  }
+})

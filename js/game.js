@@ -1,10 +1,11 @@
 let gameOver = false
 let scoreText = document.querySelector(".score")
-
+let textFeedback = document.getElementById("text")
 class Game{
   constructor(){
     this.playerImage
     this.tomatoImage
+    this.backgroundImage
     this.player = new Player()
     this.bullets = []
     this.tomatoes = []
@@ -13,12 +14,15 @@ class Game{
   preload(){
     this.playerImage = loadImage("../images/mona-lisa.png")
     this.tomatoImage = loadImage("../images/tomato.png")
+    this.backgroundImage = loadImage("../images/louvre-hall.png")
   }
   draw(){
     if(gameOver){
+      textFeedback.innerText = "GAME OVER! Press CTRL + R to restart game"
+      textFeedback.style.color = "red"
       noLoop()
     }
-    background("#ffffff")
+    background(this.backgroundImage)
     this.player.draw()
     this.bullets.forEach(bullet => {
       bullet.draw()
@@ -43,7 +47,7 @@ class Game{
       let randX = Math.floor(Math.random() * 500)
       let tomato = new Tomato(randX)
       game.tomatoes.push(tomato)
-    }, 1000)
+    }, 750)
   }
   updateScore(){
     scoreText.innerText = this.score
